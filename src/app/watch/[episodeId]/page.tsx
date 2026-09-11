@@ -61,12 +61,12 @@ function WatchContent() {
   const prevEpisode = currentEpIndex > 0 ? episodes[currentEpIndex - 1] : null;
   const nextEpisode = currentEpIndex >= 0 && currentEpIndex < episodes.length - 1 ? episodes[currentEpIndex + 1] : null;
 
-  // Video embed URLs with SUB / DUB support
-  const dubParam = audioMode === 'dub' ? '?dub=1' : '';
+  // Video embed URLs with SUB / DUB support (using real MyAnimeList ID query parameters)
+  const dubParam = audioMode === 'dub' ? '&dub=1' : '';
   const embedUrls: Record<ServerOption, string> = {
-    'vidsrc-pm': `https://vidsrc.pm/embed/anime/${animeId}/${episodeNum}${dubParam}`,
-    'vidsrc-io': `https://vidsrc.io/embed/anime/${animeId}/${episodeNum}${dubParam}`,
-    'embed-su': `https://embed.su/embed/anime/${animeId}/${episodeNum}`,
+    'vidsrc-pm': `https://vidsrc.pm/embed/anime?mal=${animeId}&ep=${episodeNum}${dubParam}`,
+    'vidsrc-io': `https://vidsrc.io/embed/anime?mal=${animeId}&ep=${episodeNum}${dubParam}`,
+    'embed-su': `https://vidsrc.xyz/embed/anime?mal=${animeId}&ep=${episodeNum}${dubParam}`,
     'trailer': anime?.trailer?.id 
       ? `https://www.youtube-nocookie.com/embed/${anime.trailer.id}?autoplay=1` 
       : '',
