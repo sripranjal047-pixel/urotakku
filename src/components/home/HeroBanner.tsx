@@ -87,7 +87,7 @@ export default function HeroBanner({ animeList }: HeroBannerProps) {
 
             <div className="flex items-center gap-3">
               <Link
-                href={`/anime/${anime.id}`}
+                href={`/watch/${anime.id}-episode-1?anime=${anime.id}&num=1`}
                 className="flex items-center gap-2 px-6 py-3 bg-[#F47521] hover:bg-[#e06515] text-white font-semibold rounded-xl transition-colors"
               >
                 <Play className="w-5 h-5 fill-white" />

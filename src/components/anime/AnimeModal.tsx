@@ -120,7 +120,7 @@ export default function AnimeModal() {
         {/* Action buttons */}
         <div className="flex items-center gap-3 mt-6">
           <Link
-            href={`/anime/${anime.id}`}
+            href={`/watch/${anime.id}-episode-1?anime=${anime.id}&num=1`}
             onClick={closeModal}
             className="flex items-center gap-2 px-5 py-2.5 bg-[#F47521] hover:bg-[#e06515] text-white font-semibold rounded-xl transition-colors"
           >
